@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/history/latest', 'HistoryController@latest');
+Route::get('/history/latest', 'HistoryController@current');
 Route::post('/history', 'HistoryController@store');
 
 Route::get('/songs/{song}', 'SongController@show');

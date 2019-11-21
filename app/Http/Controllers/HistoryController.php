@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class HistoryController extends Controller
 {
-    public function latest()
+    public function current()
     {
         return new HistoryResource(History::latest()->first());
     }
@@ -45,7 +45,7 @@ class HistoryController extends Controller
         $history->song_id = $request->song_id;
         $history->save();
 
-        return $this->latest();
+        return $this->current();
     }
 
     /**
