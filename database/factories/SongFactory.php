@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Song::class, function (Faker $faker) {
     $slug = $faker->slug();
     return [
-        'data' => '{"array": "' . $slug . '"}',
+        'data' => '{"array":"' . $slug . '"}',
     ];
 });

@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\History;
+use App\Http\Resources\HistoryResource;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
 {
+    public function latest()
+    {
+        return new HistoryResource(History::latest()->first());
+    }
+
     /**
      * Display a listing of the resource.
      *

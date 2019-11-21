@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\SongResource;
 use App\Song;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,11 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $song = new Song();
+        $song->data = $request->data;
+        $song->save();
+
+        return $this->show($song);
     }
 
     /**
@@ -46,7 +51,7 @@ class SongController extends Controller
      */
     public function show(Song $song)
     {
-        //
+        return new SongResource($song);
     }
 
     /**
