@@ -41,7 +41,11 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $history = new History();
+        $history->song_id = $request->song_id;
+        $history->save();
+
+        return $this->latest();
     }
 
     /**
