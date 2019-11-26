@@ -1,0 +1,15 @@
+runtime: php72
+
+
+env_variables:
+  ## Put production environment variables here.
+  APP_KEY: base64:zgdODIwQnG4oY63bAB+WWyfMBXcoH5vjmkOw8AlqYic=
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  CACHE_DRIVER: file
+  SESSION_DRIVER: cookie
+  ## Set these environment variables according to your CloudSQL configuration.
+  DB_DATABASE: laravel
+  DB_USERNAME: root
+  DB_PASSWORD: kLueHppoFGK3HAhC
+  DB_SOCKET: "/cloudsql/marimba-bot-259814:us-east1:marimba-bot-sql"
