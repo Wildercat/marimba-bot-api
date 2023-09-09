@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/history/latest', 'HistoryController@current');
+Route::post('/history', 'HistoryController@store');
+
+Route::get('/songs/{song}', 'SongController@show');
+Route::post('/songs', 'SongController@store');

@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\History;
+use App\Http\Resources\HistoryResource;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
 {
+    public function current()
+    {
+        return new HistoryResource(History::latest()->first());
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +41,11 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $history = new History();
+        $history->song_id = $request->song_id;
+        $history->save();
+
+        return $this->current();
     }
 
     /**
